@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         val rickAndMortyService: RickAndMortyService =
             retrofit.create(RickAndMortyService::class.java)
-S
+
         rickAndMortyService.getCharacterById(54)
             .enqueue(object : Callback<GetCharacterByIdResponse> {
 
