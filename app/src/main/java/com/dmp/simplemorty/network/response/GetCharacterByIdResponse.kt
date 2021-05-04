@@ -1,4 +1,4 @@
-package com.dmp.simplemorty
+package com.dmp.simplemorty.network.response
 
 data class GetCharacterByIdResponse(
     val created: String = "",

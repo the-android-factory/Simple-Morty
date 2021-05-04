@@ -1,5 +1,6 @@
-package com.dmp.simplemorty
+package com.dmp.simplemorty.network
 
+import com.dmp.simplemorty.network.response.GetCharacterByIdResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

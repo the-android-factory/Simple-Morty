@@ -1,5 +1,6 @@
-package com.dmp.simplemorty
+package com.dmp.simplemorty.network
 
+import com.dmp.simplemorty.network.response.GetCharacterByIdResponse
 import retrofit2.Response
 
 class ApiClient(

@@ -1,4 +1,4 @@
-package com.dmp.simplemorty
+package com.dmp.simplemorty.network
 
 import retrofit2.Response
 
