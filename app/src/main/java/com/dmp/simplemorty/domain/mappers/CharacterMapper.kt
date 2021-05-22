@@ -2,12 +2,18 @@ package com.dmp.simplemorty.domain.mappers
 
 import com.dmp.simplemorty.domain.models.Character
 import com.dmp.simplemorty.network.response.GetCharacterByIdResponse
+import com.dmp.simplemorty.network.response.GetEpisodeByIdResponse
 
 object CharacterMapper {
 
-    fun buildFrom(response: GetCharacterByIdResponse): Character {
+    fun buildFrom(
+        response: GetCharacterByIdResponse,
+        episodes: List<GetEpisodeByIdResponse>
+    ): Character {
         return Character(
-            episodeList = emptyList(), // todo
+            episodeList = episodes.map {
+                EpisodeMapper.buildFrom(it)
+            },
             gender = response.gender,
             id = response.id,
             image = response.image,
