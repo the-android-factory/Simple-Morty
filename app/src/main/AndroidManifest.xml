@@ -13,15 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleMorty">
 
-        <activity android:name=".characters.CharacterListActivity">
+        <activity android:name=".NavGraphActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".CharacterDetailActivity" />
 
     </application>
 
