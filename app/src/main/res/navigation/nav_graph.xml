@@ -13,7 +13,11 @@
 
         <action
             android:id="@+id/action_characterListFragment_to_characterDetailFragment"
-            app:destination="@id/characterDetailFragment" />
+            app:destination="@id/characterDetailFragment"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popExitAnim="@anim/slide_out_to_right"
+            app:popEnterAnim="@anim/slide_in_from_left"/>
 
     </fragment>
 
