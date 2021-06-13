@@ -45,7 +45,7 @@ class CharacterDetailFragment : Fragment() {
             }
         }
 
-        viewModel.refreshCharacter(characterId = safeArgs.characterId)
+        viewModel.fetchCharacter(characterId = safeArgs.characterId)
 
         val epoxyRecyclerView = view.findViewById<EpoxyRecyclerView>(R.id.epoxyRecyclerView)
         epoxyRecyclerView.setControllerAndBuildModels(epoxyController)
