@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/characterListFragment"
-        android:name="com.dmp.simplemorty.CharacterListFragment"
+        android:name="com.dmp.simplemorty.characters.CharacterListFragment"
         android:label="Rick and Morty Characters"
         tools:layout="@layout/fragment_character_list">
 
@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/characterDetailFragment"
-        android:name="com.dmp.simplemorty.CharacterDetailFragment"
+        android:name="com.dmp.simplemorty.characters.detail.CharacterDetailFragment"
         android:label="Character Details"
         tools:layout="@layout/fragment_character_detail">
 

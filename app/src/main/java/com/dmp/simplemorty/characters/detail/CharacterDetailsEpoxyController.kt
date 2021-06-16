@@ -1,14 +1,13 @@
-package com.dmp.simplemorty
+package com.dmp.simplemorty.characters.detail
 
 import com.airbnb.epoxy.CarouselModel_
 import com.airbnb.epoxy.EpoxyController
-import com.airbnb.epoxy.EpoxyModel
+import com.dmp.simplemorty.R
 import com.dmp.simplemorty.databinding.*
 import com.dmp.simplemorty.domain.models.Character
 import com.dmp.simplemorty.domain.models.Episode
 import com.dmp.simplemorty.epoxy.LoadingEpoxyModel
 import com.dmp.simplemorty.epoxy.ViewBindingKotlinModel
-import com.dmp.simplemorty.network.response.GetCharacterByIdResponse
 import com.squareup.picasso.Picasso
 
 class CharacterDetailsEpoxyController : EpoxyController() {
