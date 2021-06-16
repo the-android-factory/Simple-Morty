@@ -16,25 +16,8 @@ class CharacterDetailViewModel: ViewModel() {
     private val _characterByIdLiveData = MutableLiveData<Character?>()
     val characterByIdLiveData: LiveData<Character?> = _characterByIdLiveData
 
-    fun fetchCharacter(characterId: Int) {
-
-        // Check the cache for our character
-        val cachedCharacter = SimpleMortyCache.characterMap[characterId]
-        if (cachedCharacter != null) {
-            _characterByIdLiveData.postValue(cachedCharacter)
-            return
-        }
-
-        // Otherwise, we need to make the network call for the character
-        viewModelScope.launch {
-            val response = repository.getCharacterById(characterId)
-
-            _characterByIdLiveData.postValue(response)
-
-            // Update cache if non-null char received
-            response?.let {
-                SimpleMortyCache.characterMap[characterId] = it
-            }
-        }
+    fun fetchCharacter(characterId: Int) = viewModelScope.launch {
+        val character = repository.getCharacterById(characterId)
+        _characterByIdLiveData.postValue(character)
     }
 }
