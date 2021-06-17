@@ -3,6 +3,7 @@ package com.dmp.simplemorty.network
 import com.dmp.simplemorty.network.response.GetCharacterByIdResponse
 import com.dmp.simplemorty.network.response.GetCharactersPageResponse
 import com.dmp.simplemorty.network.response.GetEpisodeByIdResponse
+import com.dmp.simplemorty.network.response.GetEpisodesPageResponse
 import retrofit2.Response
 
 class ApiClient(
@@ -23,6 +24,10 @@ class ApiClient(
 
     suspend fun getEpisodeRange(episodeRange: String): SimpleResponse<List<GetEpisodeByIdResponse>> {
         return safeApiCall { rickAndMortyService.getEpisodeRange(episodeRange) }
+    }
+
+    suspend fun getEpisodesPage(pageIndex: Int): SimpleResponse<GetEpisodesPageResponse> {
+        return safeApiCall { rickAndMortyService.getEpisodesPage(pageIndex) }
     }
 
     private inline fun <T> safeApiCall(apiCall: () -> Response<T>): SimpleResponse<T> {

@@ -37,7 +37,7 @@
 
     <fragment
         android:id="@+id/episodeListFragment"
-        android:name="com.dmp.simplemorty.EpisodeListFragment"
+        android:name="com.dmp.simplemorty.episodes.EpisodeListFragment"
         android:label="Rick and Morty Episodes"
         tools:layout="@layout/fragment_episode_list">
 
