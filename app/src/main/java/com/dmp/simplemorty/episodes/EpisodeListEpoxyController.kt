@@ -4,6 +4,7 @@ import com.airbnb.epoxy.EpoxyModel
 import com.airbnb.epoxy.paging3.PagingDataEpoxyController
 import com.dmp.simplemorty.R
 import com.dmp.simplemorty.databinding.ModelEpisodeListItemBinding
+import com.dmp.simplemorty.databinding.ModelEpisodeListTitleBinding
 import com.dmp.simplemorty.domain.models.Episode
 import com.dmp.simplemorty.epoxy.ViewBindingKotlinModel
 import kotlinx.coroutines.ObsoleteCoroutinesApi
@@ -31,6 +32,15 @@ class EpisodeListEpoxyController : PagingDataEpoxyController<Episode>() {
             episodeNumberTextView.text = episode.episode
 
             root.setOnClickListener { onClick(episode.id) }
+        }
+    }
+
+    data class EpisodeListTitleEpoxyModel(
+        val title: String
+    ) : ViewBindingKotlinModel<ModelEpisodeListTitleBinding>(R.layout.model_episode_list_title) {
+
+        override fun ModelEpisodeListTitleBinding.bind() {
+            textView.text = title
         }
     }
 }
