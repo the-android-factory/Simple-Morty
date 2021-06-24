@@ -10,15 +10,25 @@ import com.dmp.simplemorty.epoxy.ViewBindingKotlinModel
 import kotlinx.coroutines.ObsoleteCoroutinesApi
 
 @ObsoleteCoroutinesApi
-class EpisodeListEpoxyController : PagingDataEpoxyController<Episode>() {
+class EpisodeListEpoxyController : PagingDataEpoxyController<EpisodesUiModel>() {
 
-    override fun buildItemModel(currentPosition: Int, item: Episode?): EpoxyModel<*> {
-        return EpisodeListItemEpoxyModel(
-            episode = item!!,
-            onClick = { episodeId ->
-                // todo
+    override fun buildItemModel(currentPosition: Int, item: EpisodesUiModel?): EpoxyModel<*> {
+        return when (item!!) {
+            is EpisodesUiModel.Item -> {
+                val episode = (item as EpisodesUiModel.Item).episode
+                EpisodeListItemEpoxyModel(
+                    episode = episode,
+                    onClick = { episodeId ->
+                        // todo
+                    }
+                ).id("episode_${episode.id}")
             }
-        ).id("episode_${item.id}")
+
+            is EpisodesUiModel.Header -> {
+                val headerText = (item as EpisodesUiModel.Header).text
+                EpisodeListTitleEpoxyModel(headerText).id("header_$headerText")
+            }
+        }
     }
 
     data class EpisodeListItemEpoxyModel(
@@ -29,7 +39,7 @@ class EpisodeListEpoxyController : PagingDataEpoxyController<Episode>() {
         override fun ModelEpisodeListItemBinding.bind() {
             episodeNameTextView.text = episode.name
             episodeAirDateTextView.text = episode.airDate
-            episodeNumberTextView.text = episode.episode
+            episodeNumberTextView.text = episode.getFormattedSeasonTruncated()
 
             root.setOnClickListener { onClick(episode.id) }
         }
