@@ -5,24 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/headerImageView"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
         android:layout_marginTop="32dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"
+        android:elevation="4dp"
+        android:padding="1dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/headerImageView"
-            android:layout_width="220dp"
-            android:layout_height="220dp"
-            android:scaleType="centerCrop"
-            tools:src="@tools:sample/backgrounds/scenic[7]" />
-
-    </com.google.android.material.card.MaterialCardView>
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.SimpleMorty"
+        app:strokeColor="?colorOnSurface"
+        app:strokeWidth="1dp"
+        tools:src="@tools:sample/backgrounds/scenic[7]" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
