@@ -5,6 +5,10 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/characterListFragment">
 
+    <action
+        android:id="@+id/action_global_to_episodeDetailBottomSheetFragment"
+        app:destination="@id/episodeDetailBottomSheetFragment" />
+
     <fragment
         android:id="@+id/characterListFragment"
         android:name="com.dmp.simplemorty.characters.CharacterListFragment"
@@ -39,20 +43,7 @@
         android:id="@+id/episodeListFragment"
         android:name="com.dmp.simplemorty.episodes.EpisodeListFragment"
         android:label="Rick and Morty Episodes"
-        tools:layout="@layout/fragment_episode_list">
-
-        <!--        <action-->
-        <!--            android:id="@+id/action_characterListFragment_to_characterDetailFragment"-->
-        <!--            app:destination="@id/characterDetailFragment"-->
-        <!--            app:enterAnim="@anim/slide_in_from_right"-->
-        <!--            app:exitAnim="@anim/slide_out_to_left"-->
-        <!--            app:popExitAnim="@anim/slide_out_to_right"-->
-        <!--            app:popEnterAnim="@anim/slide_in_from_left"/>-->
-
-        <action
-            android:id="@+id/action_episodeListFragment_to_episodeDetailBottomSheetFragment"
-            app:destination="@id/episodeDetailBottomSheetFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_episode_list"/>
 
     <dialog
         android:id="@+id/episodeDetailBottomSheetFragment"

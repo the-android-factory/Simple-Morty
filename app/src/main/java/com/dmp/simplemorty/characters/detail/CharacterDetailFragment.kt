@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.dmp.simplemorty.NavGraphDirections
 import com.dmp.simplemorty.R
 import com.dmp.simplemorty.databinding.FragmentCharacterDetailBinding
 
@@ -22,7 +23,12 @@ class CharacterDetailFragment : Fragment(R.layout.fragment_character_detail) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentCharacterDetailBinding.bind(view)
 
-        val epoxyController = CharacterDetailsEpoxyController()
+        val epoxyController = CharacterDetailsEpoxyController { episodeClickedId ->
+            val navDirections = NavGraphDirections.actionGlobalToEpisodeDetailBottomSheetFragment(
+                episodeId = episodeClickedId
+            )
+            findNavController().navigate(navDirections)
+        }
         viewModel.characterByIdLiveData.observe(viewLifecycleOwner) { character ->
 
             epoxyController.character = character

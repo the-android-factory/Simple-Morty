@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.PagingData
+import com.dmp.simplemorty.NavGraphDirections
 import com.dmp.simplemorty.R
 import com.dmp.simplemorty.databinding.FragmentEpisodeListBinding
 import kotlinx.coroutines.ObsoleteCoroutinesApi
@@ -26,10 +27,9 @@ class EpisodeListFragment : Fragment(R.layout.fragment_episode_list) {
         _binding = FragmentEpisodeListBinding.bind(view)
 
         val epoxyController = EpisodeListEpoxyController { episodeClickedId ->
-            val navDirections =
-                EpisodeListFragmentDirections.actionEpisodeListFragmentToEpisodeDetailBottomSheetFragment(
-                    episodeClickedId
-                )
+            val navDirections = NavGraphDirections.actionGlobalToEpisodeDetailBottomSheetFragment(
+                episodeId = episodeClickedId
+            )
             findNavController().navigate(navDirections)
         }
 

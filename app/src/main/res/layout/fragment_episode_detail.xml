@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="48dp"
     android:background="?colorSurface">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -67,7 +68,7 @@
     <com.airbnb.epoxy.EpoxyRecyclerView
         android:id="@+id/epoxyRecyclerView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="220dp"
         android:layout_marginTop="4dp"
         android:orientation="horizontal"
         android:overScrollMode="never"
