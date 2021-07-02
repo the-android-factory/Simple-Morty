@@ -70,6 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:orientation="horizontal"
+        android:overScrollMode="never"
         android:paddingHorizontal="16dp"
         app:itemSpacing="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
