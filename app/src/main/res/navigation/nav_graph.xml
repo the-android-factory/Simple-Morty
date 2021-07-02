@@ -16,8 +16,8 @@
             app:destination="@id/characterDetailFragment"
             app:enterAnim="@anim/slide_in_from_right"
             app:exitAnim="@anim/slide_out_to_left"
-            app:popExitAnim="@anim/slide_out_to_right"
-            app:popEnterAnim="@anim/slide_in_from_left"/>
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right" />
 
     </fragment>
 
@@ -41,14 +41,30 @@
         android:label="Rick and Morty Episodes"
         tools:layout="@layout/fragment_episode_list">
 
-<!--        <action-->
-<!--            android:id="@+id/action_characterListFragment_to_characterDetailFragment"-->
-<!--            app:destination="@id/characterDetailFragment"-->
-<!--            app:enterAnim="@anim/slide_in_from_right"-->
-<!--            app:exitAnim="@anim/slide_out_to_left"-->
-<!--            app:popExitAnim="@anim/slide_out_to_right"-->
-<!--            app:popEnterAnim="@anim/slide_in_from_left"/>-->
+        <!--        <action-->
+        <!--            android:id="@+id/action_characterListFragment_to_characterDetailFragment"-->
+        <!--            app:destination="@id/characterDetailFragment"-->
+        <!--            app:enterAnim="@anim/slide_in_from_right"-->
+        <!--            app:exitAnim="@anim/slide_out_to_left"-->
+        <!--            app:popExitAnim="@anim/slide_out_to_right"-->
+        <!--            app:popEnterAnim="@anim/slide_in_from_left"/>-->
 
+        <action
+            android:id="@+id/action_episodeListFragment_to_episodeDetailBottomSheetFragment"
+            app:destination="@id/episodeDetailBottomSheetFragment" />
     </fragment>
+
+    <dialog
+        android:id="@+id/episodeDetailBottomSheetFragment"
+        android:name="com.dmp.simplemorty.episodes.detail.EpisodeDetailBottomSheetFragment"
+        android:label=""
+        tools:layout="@layout/fragment_episode_detail">
+
+        <argument
+            android:name="episodeId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+
+    </dialog>
 
 </navigation>

@@ -1,17 +1,24 @@
 package com.dmp.simplemorty.domain.mappers
 
 import com.dmp.simplemorty.domain.models.Episode
+import com.dmp.simplemorty.network.response.GetCharacterByIdResponse
 import com.dmp.simplemorty.network.response.GetEpisodeByIdResponse
 
 object EpisodeMapper {
 
-    fun buildFrom(networkEpisode: GetEpisodeByIdResponse): Episode {
+    fun buildFrom(
+        networkEpisode: GetEpisodeByIdResponse,
+        networkCharacters: List<GetCharacterByIdResponse> = emptyList()
+    ): Episode {
         return Episode(
             id = networkEpisode.id,
             name = networkEpisode.name,
             airDate = networkEpisode.air_date,
             seasonNumber = getSeasonNumberFromEpisodeString(networkEpisode.episode),
-            episodeNumber = getEpisodeNumberFromEpisodeString(networkEpisode.episode)
+            episodeNumber = getEpisodeNumberFromEpisodeString(networkEpisode.episode),
+            characters = networkCharacters.map {
+                CharacterMapper.buildFrom(it)
+            }
         )
     }
 
