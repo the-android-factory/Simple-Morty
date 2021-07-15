@@ -25,7 +25,11 @@ class NavGraphActivity : AppCompatActivity() {
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
 
         appBarConfiguration = AppBarConfiguration(
-            topLevelDestinationIds = setOf(R.id.characterListFragment, R.id.episodeListFragment),
+            topLevelDestinationIds = setOf(
+                R.id.characterListFragment,
+                R.id.characterSearchFragment,
+                R.id.episodeListFragment
+            ),
             drawerLayout = drawerLayout
         )
         setupActionBarWithNavController(

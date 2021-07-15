@@ -9,6 +9,7 @@
         android:id="@+id/action_global_to_episodeDetailBottomSheetFragment"
         app:destination="@id/episodeDetailBottomSheetFragment" />
 
+    <!--region Characters-->
     <fragment
         android:id="@+id/characterListFragment"
         android:name="com.dmp.simplemorty.characters.CharacterListFragment"
@@ -40,6 +41,14 @@
     </fragment>
 
     <fragment
+        android:id="@+id/characterSearchFragment"
+        android:name="com.dmp.simplemorty.characters.search.CharacterSearchFragment"
+        android:label="Character Search"
+        tools:layout="@layout/fragment_character_search" />
+    <!--endregion Characters-->
+
+    <!--region Episodes-->
+    <fragment
         android:id="@+id/episodeListFragment"
         android:name="com.dmp.simplemorty.episodes.EpisodeListFragment"
         android:label="Rick and Morty Episodes"
@@ -57,5 +66,6 @@
             app:argType="integer" />
 
     </dialog>
+    <!--endregion Episodes-->
 
 </navigation>

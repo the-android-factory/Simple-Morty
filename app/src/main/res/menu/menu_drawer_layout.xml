@@ -7,6 +7,10 @@
                     android:id="@+id/characterListFragment"
                     android:icon="@drawable/ic_people_24"
                     android:title="All Characters" />
+                <item
+                    android:id="@+id/characterSearchFragment"
+                    android:icon="@drawable/ic_character_search_24"
+                    android:title="Search Characters" />
             </group>
         </menu>
     </item>
