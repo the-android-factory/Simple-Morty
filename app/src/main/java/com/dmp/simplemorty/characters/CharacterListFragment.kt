@@ -2,13 +2,13 @@ package com.dmp.simplemorty.characters
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.dmp.simplemorty.BaseFragment
 import com.dmp.simplemorty.R
 import com.dmp.simplemorty.databinding.FragmentCharacterListBinding
 
-class CharacterListFragment : Fragment(R.layout.fragment_character_list) {
+class CharacterListFragment : BaseFragment(R.layout.fragment_character_list) {
 
     private var _binding: FragmentCharacterListBinding? = null
     private val binding get() = _binding!!
