@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">Simple Morty</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name_home_screen">Morty</string>
 </resources>
